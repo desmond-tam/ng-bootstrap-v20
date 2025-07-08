@@ -16,4 +16,8 @@ export class HeaderComponent implements OnInit {
      document.body.classList.toggle("toggle-sidebar");
   }
 
+  search(evt:any) {
+    evt.preventDefault();
+  }
+
 }

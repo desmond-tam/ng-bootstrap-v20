@@ -15,6 +15,14 @@ import { ChartjsComponent } from "./chartjs/chartjs.component";
 import { CarouselComponent } from "./carousel/carousel.component";
 import { ListGroupComponent } from "./list-group/list-group.component";
 import { ModalComponent } from "./modal/modal.component";
+import { PaginationComponent } from "./pagination/pagination.component";
+import { ProgressComponent } from "./progress/progress.component";
+import { TabsComponent } from "./tabs/tabs.component";
+import { SpinnersComponent } from './spinners/spinners.component';
+import { TooltipsComponent } from "./tooltips/tooltips.component";
+import { FormEditorsComponent } from "../forms/formEditors/formEditors.component";
+import { FormElementsComponent } from "../forms/formElements/formElements.component";
+import { FormLayoutsComponent } from "../forms/formLayouts/formLayouts.component";
 
 
 @Component({
@@ -23,7 +31,9 @@ import { ModalComponent } from "./modal/modal.component";
   styleUrls: ['./body.component.css'],
   imports: [CommonModule, AlertComponent, AccordionComponent,
     BadgesComponent, BreadcrumbsComponent, ButtonsComponent, CardsComponent, ChartjsComponent,
-    HomeComponent, CarouselComponent, ListGroupComponent, ModalComponent]
+    HomeComponent, CarouselComponent, ListGroupComponent, ModalComponent, PaginationComponent,
+    ProgressComponent, TabsComponent, SpinnersComponent, TooltipsComponent, FormEditorsComponent,
+    FormElementsComponent, FormLayoutsComponent]
 })
 export class BodyComponent implements OnInit {
   page:string = 'none';

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, DoCheck, OnInit } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgApexchartsModule } from 'ng-apexcharts';
@@ -18,31 +18,35 @@ interface ChartOptions {
   imports: [NgApexchartsModule]
 })
 export class ReportComponent implements OnInit {
-  public chartOptions: Partial<ChartOptions>;
+  public chartOptions: Partial<ChartOptions> = {};
 
   constructor() {
-this.chartOptions = {
-      series: [
-        {
-          name: "My-series",
-          data: [10, 41, 35, 51, 49, 62, 69, 91, 148]
-        }
-      ],
-      chart: {
-        height: 350,
-        type: "bar"
-      },
-      title: {
-        text: "Monthly Sales Report",
-      },
-      xaxis: {
-        categories: ["Jan", "Feb",  "Mar",  "Apr",  "May",  "Jun",  "Jul",  "Aug", "Sep"]
-      }
-    };
+
    }
 
   ngOnInit() {
+    this.chartOptions = {
+        series: [
+          {
+            name: "Sales",
+            data: [30, 40, 35, 50, 49, 60, 70, 91, 125]
+          }
+        ],
+        chart: {
+          height: 350,
+          type: 'line',
+          zoom: {
+            enabled: false
+          }
+        },
+        xaxis: {
+          categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep']
+        },
+        title: {
+          text: "Monthly Sales Data",
+          align: 'left'
+        }
+      };
    }
-
 
 }

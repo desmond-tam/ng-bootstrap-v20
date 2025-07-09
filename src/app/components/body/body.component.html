@@ -1,8 +1,14 @@
 
   <main id="main" class="main">
-    <app-home *ngIf="(page === 'home')"></app-home>
+    <app-home *ngIf="(page === 'home' || page === 'none')"></app-home>
     <app-alert *ngIf="(page === 'alert')"></app-alert>
     <app-accordion *ngIf="(page === 'accordion')"></app-accordion>
     <app-badges *ngIf="(page === 'badges')"></app-badges>
     <app-breadcrumbs *ngIf="(page === 'breadcrumbs')"></app-breadcrumbs>
+    <app-buttons *ngIf="(page === 'buttons')"></app-buttons>
+    <app-cards *ngIf="(page === 'cards')"></app-cards>
+    <app-chartjs *ngIf="(page === 'chartjs')"></app-chartjs>
+    <app-carousel *ngIf="(page === 'carousel')"></app-carousel>
+    <app-list-group *ngIf="(page === 'listGroups')"></app-list-group>
+    <app-modal *nfIf="(page === 'modals')"></app-modal>
   </main>

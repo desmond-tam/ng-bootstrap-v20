@@ -30,7 +30,8 @@ export enum ActionType {
     pagesRegister = 28,
     tablesData = 29,
     tablesGeneral = 30,
-    usersProfile = 31
+    usersProfile = 31,
+    chartjs = 32,
 }
 
 

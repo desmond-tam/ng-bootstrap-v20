@@ -6,9 +6,10 @@ import { IAction, initialAction } from '../models/common.model';
   providedIn: 'root'
 })
 export class GatewayService {
-      private PageBehavior = new BehaviorSubject<IAction>(initialAction);
+  private PageBehavior = new BehaviorSubject<IAction>(initialAction);
 
-constructor() { }
+  constructor() { }
+
   public setPage(action: IAction): void {
       this.PageBehavior.next(action);
   }

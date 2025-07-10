@@ -41,7 +41,7 @@ export interface IAction {
 }
 
 export const initialAction: IAction = {
-    page:ActionType.none,
+    page:ActionType.home,
     payload:{
         fullscreen:false
     }

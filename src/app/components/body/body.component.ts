@@ -1,9 +1,9 @@
-import { Component, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
 import { BudgetReportComponent } from "../budget-report/budget-report.component";
 import { ReportComponent } from '../report/report.component';
 import { HomeComponent } from "./home/home.component";
 import { GatewayService } from '../../services/gateway.service';
-import { ActionType } from '../../models/common.model';
+import { ActionType, initialAction } from '../../models/common.model';
 import { AlertComponent } from "./alert/alert.component";
 import { CommonModule } from '@angular/common';
 import { AccordionComponent } from "./accordion/accordion.component";
@@ -23,7 +23,6 @@ import { TooltipsComponent } from "./tooltips/tooltips.component";
 import { FormEditorsComponent } from "../forms/formEditors/formEditors.component";
 import { FormElementsComponent } from "../forms/formElements/formElements.component";
 import { FormLayoutsComponent } from "../forms/formLayouts/formLayouts.component";
-import { Tooltip } from 'chart.js';
 import { FormValidationComponent } from '../forms/formValidation/formValidation.component';
 import { IconsComponent } from './icons/icons.component';
 import { BoxiconsComponent } from './boxicons/boxicons.component';
@@ -31,7 +30,6 @@ import { RemixComponent } from './remix/remix.component';
 import { PagesBlankComponent } from './pagesBlank/pagesBlank.component';
 
 const registry : Record<string,any> = {
-  'default':HomeComponent,
   'home':HomeComponent,
   'alert':AlertComponent,
   'accordion':AccordionComponent,
@@ -64,11 +62,12 @@ const registry : Record<string,any> = {
   styleUrls: ['./body.component.css'],
   imports: [CommonModule]
 })
-export class BodyComponent implements OnInit {
+export class BodyComponent implements OnInit,AfterViewInit {
  @ViewChild('container', { read: ViewContainerRef }) container!: ViewContainerRef;
-  page:string = 'default';
+  page:string = 'none';
 
-  constructor(private service:GatewayService) {}
+  constructor(private service:GatewayService) {
+  }
 
   loadComponent(name:string) {
     this.container?.clear();
@@ -77,9 +76,13 @@ export class BodyComponent implements OnInit {
 
   ngOnInit() {
     this.service.onPageChanged().subscribe((action) => {
-       const name = ActionType[action.page];
+      const name = ActionType[action.page];
       this.loadComponent(name);
     });
+  }
+
+  ngAfterViewInit(): void {
+    this.container?.createComponent(HomeComponent);
   }
 
 

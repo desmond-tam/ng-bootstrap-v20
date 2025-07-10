@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
 import { BudgetReportComponent } from "../budget-report/budget-report.component";
 import { ReportComponent } from '../report/report.component';
 import { HomeComponent } from "./home/home.component";
@@ -23,28 +23,62 @@ import { TooltipsComponent } from "./tooltips/tooltips.component";
 import { FormEditorsComponent } from "../forms/formEditors/formEditors.component";
 import { FormElementsComponent } from "../forms/formElements/formElements.component";
 import { FormLayoutsComponent } from "../forms/formLayouts/formLayouts.component";
+import { Tooltip } from 'chart.js';
+import { FormValidationComponent } from '../forms/formValidation/formValidation.component';
+import { IconsComponent } from './icons/icons.component';
+import { BoxiconsComponent } from './boxicons/boxicons.component';
+import { RemixComponent } from './remix/remix.component';
+import { PagesBlankComponent } from './pagesBlank/pagesBlank.component';
 
+const registry : Record<string,any> = {
+  'default':HomeComponent,
+  'home':HomeComponent,
+  'alert':AlertComponent,
+  'accordion':AccordionComponent,
+  'badges':BadgesComponent,
+  'breadcrumbs':BreadcrumbsComponent,
+  'buttons':ButtonsComponent,
+  'cards':CardsComponent,
+  'carousel':CarouselComponent,
+  'listGroups':ListGroupComponent,
+  'modals':ModalComponent,
+  'pagination':PaginationComponent,
+  'progress':ProgressComponent,
+  'spinners':SpinnersComponent,
+  'tabs':TabsComponent,
+  'tooltips':TooltipsComponent,
+  'formEditors':FormEditorsComponent,
+  'formElements':FormElementsComponent,
+  'formLayouts':FormLayoutsComponent,
+  'formValidation':FormValidationComponent,
+  'icons':IconsComponent,
+  'boxicons':BoxiconsComponent,
+  'chartjs':ChartjsComponent,
+  'remix':RemixComponent,
+  'pagesBlank':PagesBlankComponent
+}
 
 @Component({
   selector: 'app-body',
   templateUrl: './body.component.html',
   styleUrls: ['./body.component.css'],
-  imports: [CommonModule, AlertComponent, AccordionComponent,
-    BadgesComponent, BreadcrumbsComponent, ButtonsComponent, CardsComponent, ChartjsComponent,
-    HomeComponent, CarouselComponent, ListGroupComponent, ModalComponent, PaginationComponent,
-    ProgressComponent, TabsComponent, SpinnersComponent, TooltipsComponent, FormEditorsComponent,
-    FormElementsComponent, FormLayoutsComponent]
+  imports: [CommonModule]
 })
 export class BodyComponent implements OnInit {
-  page:string = 'none';
-  constructor(private service:GatewayService) {
+ @ViewChild('container', { read: ViewContainerRef }) container!: ViewContainerRef;
+  page:string = 'default';
 
-   }
+  constructor(private service:GatewayService) {}
+
+  loadComponent(name:string) {
+    this.container?.clear();
+    this.container?.createComponent(registry[name]);
+  }
 
   ngOnInit() {
-
     this.service.onPageChanged().subscribe((action) => {
-      this.page = ActionType[action.page];
+       const name = ActionType[action.page];
+      this.loadComponent(name);
     });
   }
 

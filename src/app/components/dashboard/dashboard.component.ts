@@ -8,7 +8,7 @@ import { FooterComponent } from "../footer/footer.component";
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css'],
-  imports: [HeaderComponent, SidenavComponent,BodyComponent, FooterComponent]
+  imports: [HeaderComponent, SidenavComponent, FooterComponent, BodyComponent]
 })
 export class DashboardComponent implements OnInit {
 

@@ -28,6 +28,10 @@ import { IconsComponent } from './icons/icons.component';
 import { BoxiconsComponent } from './boxicons/boxicons.component';
 import { RemixComponent } from './remix/remix.component';
 import { PagesBlankComponent } from './pagesBlank/pagesBlank.component';
+import { PagesContactComponent } from './pagesContact/pagesContact.component';
+import { TablesDataComponent } from './tablesData/tablesData.component';
+import { TablesGeneralComponent } from './tablesGeneral/tablesGeneral.component';
+import { ApexChartComponent } from '../chart/apexChart/apexChart.component';
 
 const registry : Record<string,any> = {
   'home':HomeComponent,
@@ -53,7 +57,11 @@ const registry : Record<string,any> = {
   'boxicons':BoxiconsComponent,
   'chartjs':ChartjsComponent,
   'remix':RemixComponent,
-  'pagesBlank':PagesBlankComponent
+  'pagesBlank':PagesBlankComponent,
+  'pagesContact':PagesContactComponent,
+  'tablesData':TablesDataComponent,
+  'tablesGeneral':TablesGeneralComponent,
+  'apexCharts':ApexChartComponent
 }
 
 @Component({

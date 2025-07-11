@@ -32,6 +32,7 @@ export enum ActionType {
     tablesGeneral = 30,
     usersProfile = 31,
     chartjs = 32,
+    apexCharts = 33
 }
 
 
@@ -46,3 +47,17 @@ export const initialAction: IAction = {
         fullscreen:false
     }
 }
+
+export type ChartOptions = {
+  series: ApexAxisChartSeries;
+  chart: ApexChart;
+  xaxis: ApexXAxis;
+  stroke: ApexStroke;
+  dataLabels: ApexDataLabels;
+  yaxis: ApexYAxis;
+  title: ApexTitleSubtitle;
+  labels: string[];
+  legend: ApexLegend;
+  subtitle: ApexTitleSubtitle;
+  plotOptions:ApexPlotOptions;
+};

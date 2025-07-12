@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ReportComponent } from '../../report/report.component';
 import { BudgetReportComponent } from '../../budget-report/budget-report.component';
 import { TrafficChartComponent } from "../traffic-chart/traffic-chart.component";
+import { NewsComponent } from '../news/news.component';
 
 
 
@@ -10,7 +11,7 @@ import { TrafficChartComponent } from "../traffic-chart/traffic-chart.component"
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
   imports: [BudgetReportComponent, ReportComponent,
-     TrafficChartComponent]
+    TrafficChartComponent, NewsComponent]
 })
 export class HomeComponent implements OnInit {
 

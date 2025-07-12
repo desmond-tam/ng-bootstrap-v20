@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { IAction, initialAction } from '../models/common.model';
+import { IAction, INewsItem, initialAction } from '../models/common.model';
+import { DataService } from './data.service';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +9,7 @@ import { IAction, initialAction } from '../models/common.model';
 export class GatewayService {
   private PageBehavior = new BehaviorSubject<IAction>(initialAction);
 
-  constructor() { }
+  constructor(private service:DataService) { }
 
   public setPage(action: IAction): void {
       this.PageBehavior.next(action);
@@ -16,6 +17,11 @@ export class GatewayService {
 
   public onPageChanged():Observable<IAction> {
       return this.PageBehavior;
+  }
+
+
+  public getNews():Observable<INewsItem[]> {
+    return this.service.getNews();
   }
 
 }

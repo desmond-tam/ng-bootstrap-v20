@@ -32,7 +32,8 @@ export enum ActionType {
     tablesGeneral = 30,
     usersProfile = 31,
     chartjs = 32,
-    apexCharts = 33
+    apexCharts = 33,
+    eCharts = 34
 }
 
 
@@ -61,3 +62,8 @@ export type ChartOptions = {
   subtitle: ApexTitleSubtitle;
   plotOptions:ApexPlotOptions;
 };
+
+export interface INewsItem {
+  date:string;
+  title:string;
+}

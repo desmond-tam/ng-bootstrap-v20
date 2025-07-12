@@ -32,6 +32,7 @@ import { PagesContactComponent } from './pagesContact/pagesContact.component';
 import { TablesDataComponent } from './tablesData/tablesData.component';
 import { TablesGeneralComponent } from './tablesGeneral/tablesGeneral.component';
 import { ApexChartComponent } from '../chart/apexChart/apexChart.component';
+import { EChartsComponent } from '../chart/eCharts/eCharts.component';
 
 const registry : Record<string,any> = {
   'home':HomeComponent,
@@ -61,7 +62,8 @@ const registry : Record<string,any> = {
   'pagesContact':PagesContactComponent,
   'tablesData':TablesDataComponent,
   'tablesGeneral':TablesGeneralComponent,
-  'apexCharts':ApexChartComponent
+  'apexCharts':ApexChartComponent,
+  'eCharts':EChartsComponent
 }
 
 @Component({

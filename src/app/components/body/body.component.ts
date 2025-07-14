@@ -33,6 +33,7 @@ import { TablesDataComponent } from './tablesData/tablesData.component';
 import { TablesGeneralComponent } from './tablesGeneral/tablesGeneral.component';
 import { ApexChartComponent } from '../chart/apexChart/apexChart.component';
 import { EChartsComponent } from '../chart/eCharts/eCharts.component';
+import { UserProfileComponent } from './userProfile/userProfile.component';
 
 const registry : Record<string,any> = {
   'home':HomeComponent,
@@ -63,7 +64,8 @@ const registry : Record<string,any> = {
   'tablesData':TablesDataComponent,
   'tablesGeneral':TablesGeneralComponent,
   'apexCharts':ApexChartComponent,
-  'eCharts':EChartsComponent
+  'eCharts':EChartsComponent,
+  'userProfile':UserProfileComponent
 }
 
 @Component({

@@ -33,7 +33,8 @@ export enum ActionType {
     usersProfile = 31,
     chartjs = 32,
     apexCharts = 33,
-    eCharts = 34
+    eCharts = 34,
+    userProfile = 35
 }
 
 
@@ -64,6 +65,7 @@ export type ChartOptions = {
 };
 
 export interface INewsItem {
+  badge:string;
   date:string;
-  title:string;
+  message:string;
 }

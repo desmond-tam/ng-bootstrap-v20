@@ -34,6 +34,12 @@ import { TablesGeneralComponent } from './tablesGeneral/tablesGeneral.component'
 import { ApexChartComponent } from '../chart/apexChart/apexChart.component';
 import { EChartsComponent } from '../chart/eCharts/eCharts.component';
 import { UserProfileComponent } from './userProfile/userProfile.component';
+import { FaqComponent } from './faq/faq.component';
+import { ContactComponent } from './contact/contact.component';
+import { Error404Component } from './error404/error404.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { BlankComponent } from './blank/blank.component';
 
 const registry : Record<string,any> = {
   'home':HomeComponent,
@@ -65,7 +71,14 @@ const registry : Record<string,any> = {
   'tablesGeneral':TablesGeneralComponent,
   'apexCharts':ApexChartComponent,
   'eCharts':EChartsComponent,
-  'userProfile':UserProfileComponent
+  'userProfile':UserProfileComponent,
+  'faq':FaqComponent,
+  'contact':ContactComponent,
+  'error404':Error404Component,
+  'login':LoginComponent,
+  'register':RegisterComponent,
+  'blank':BlankComponent
+
 }
 
 @Component({

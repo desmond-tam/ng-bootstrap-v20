@@ -84,6 +84,7 @@ export class BubblechartComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
+     // ng-charts doesn't work for this angular version
     new Chart("bubbleChart", this.options);
   }
 

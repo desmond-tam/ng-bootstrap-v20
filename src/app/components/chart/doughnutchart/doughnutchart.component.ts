@@ -33,6 +33,7 @@ export class DoughnutchartComponent implements OnInit,AfterViewInit {
   }
 
   ngAfterViewInit(): void {
+     // ng-charts doesn't work for this angular version
     new Chart("doughnutChart", this.options);
   }
 

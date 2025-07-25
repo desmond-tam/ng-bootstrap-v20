@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import * as echarts from 'echarts';
-
+ // ngx-echarts doesn't work for this angular version
 
 @Component({
   selector: 'app-eCharts',

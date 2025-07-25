@@ -34,7 +34,13 @@ export enum ActionType {
     chartjs = 32,
     apexCharts = 33,
     eCharts = 34,
-    userProfile = 35
+    userProfile = 35,
+    faq = 36,
+    contact = 37,
+    error404 = 38,
+    login = 39,
+    register = 40,
+    blank = 41
 }
 
 

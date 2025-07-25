@@ -49,6 +49,7 @@ export class BarchartComponent implements OnInit,AfterViewInit {
   }
 
   ngAfterViewInit(): void {
+    // ng-charts doesn't work for this angular version
     new Chart("barChart", this.options);
   }
 
